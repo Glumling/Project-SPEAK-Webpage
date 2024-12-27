@@ -29,7 +29,7 @@ function App() {
   // Call Flask API to generate phrases
   const generatePhrases = async () => {
     try {
-      const response = await fetch("https://phrase-eltieojo2-rayyaan-haamids-projects.vercel.app/generate-phrases", {
+      const response = await fetch("https://phrase-mauve.vercel.app//generate-phrases", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -54,7 +54,7 @@ function App() {
         return;
       }
   
-      const response = await fetch("https://phrase-eltieojo2-rayyaan-haamids-projects.vercel.app/generate-speech", {
+      const response = await fetch("https://phrase-mauve.vercel.app//generate-speech", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
