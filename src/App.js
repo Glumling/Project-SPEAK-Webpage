@@ -26,22 +26,38 @@ function App() {
     setKeyword(event.target.value);
   };
 
-  // Call Flask API to generate phrases
-  const generatePhrases = async () => {
-    try {
-      const response = await fetch("https://phrase-mauve.vercel.app/generate-phrases", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ keyword, mode }),
-      });
-      const data = await response.json();
-      setPhrases(data);
-    } catch (error) {
-      console.error("Error generating phrases:", error);
+// Call Flask API to generate phrases with detailed debugging
+const generatePhrases = async () => {
+  try {
+    console.log("Starting to generate phrases...");
+    console.log("Keyword:", keyword);
+    console.log("Mode:", mode);
+
+    const response = await fetch("https://phrase-mauve.vercel.app/generate-phrases", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({ keyword, mode }),
+    });
+
+    console.log("Response status:", response.status);
+    console.log("Response headers:", response.headers);
+
+    if (!response.ok) {
+      // Log specific response details if not successful
+      const errorText = await response.text();
+      console.error("Response error details:", errorText);
+      throw new Error(`HTTP error! status: ${response.status}, details: ${errorText}`);
     }
-  };
+
+    const data = await response.json();
+    console.log("Response data received:", data);
+    setPhrases(data);
+  } catch (error) {
+    console.error("Error generating phrases:", error);
+  }
+};
 
   // Call Flask API to generate and play speech
   let currentAudio = null; // Global variable to track current audio instance
