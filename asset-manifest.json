@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/Project-SPEAK-Webpage/static/css/main.fef6b833.css",
+    "main.js": "/Project-SPEAK-Webpage/static/js/main.5ebbc89e.js",
+    "static/js/767.3e6ea822.chunk.js": "/Project-SPEAK-Webpage/static/js/767.3e6ea822.chunk.js",
+    "index.html": "/Project-SPEAK-Webpage/index.html",
+    "main.fef6b833.css.map": "/Project-SPEAK-Webpage/static/css/main.fef6b833.css.map",
+    "main.5ebbc89e.js.map": "/Project-SPEAK-Webpage/static/js/main.5ebbc89e.js.map",
+    "767.3e6ea822.chunk.js.map": "/Project-SPEAK-Webpage/static/js/767.3e6ea822.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.fef6b833.css",
+    "static/js/main.5ebbc89e.js"
+  ]
+}
