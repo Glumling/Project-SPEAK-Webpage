@@ -26,7 +26,7 @@ function App() {
     setKeyword(event.target.value);
   };
 
-  const BASE_URL = "https://phrase-lds0n7mxg-rayyaan-haamids-projects.vercel.app";
+  const BASE_URL = "https://phrase-hob6b0qso-rayyaan-haamids-projects.vercel.app";
 
   // Call Flask API to generate phrases
   const generatePhrases = async () => {
