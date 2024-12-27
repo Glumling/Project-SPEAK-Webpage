@@ -26,10 +26,12 @@ function App() {
     setKeyword(event.target.value);
   };
 
+  const BASE_URL = "https://phrase-45jivu9yg-rayyaan-haamids-projects.vercel.app";
+
   // Call Flask API to generate phrases
   const generatePhrases = async () => {
     try {
-      const response = await fetch("http://localhost:5000/generate-phrases", {
+      const response = await fetch("${BASE_URL}/generate-phrases", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -54,7 +56,7 @@ function App() {
         return;
       }
   
-      const response = await fetch("http://localhost:5000/generate-speech", {
+      const response = await fetch("${BASE_URL}/generate-speech", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
