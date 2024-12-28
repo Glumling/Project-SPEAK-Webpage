@@ -42,22 +42,21 @@ const generatePhrases = async () => {
     });
 
     console.log("Response status:", response.status);
-    console.log("Response headers:", response.headers);
 
     if (!response.ok) {
-      // Log specific response details if not successful
       const errorText = await response.text();
-      console.error("Response error details:", errorText);
-      throw new Error(`HTTP error! status: ${response.status}, details: ${errorText}`);
+      console.error("Error response from server:", errorText);
+      throw new Error(`HTTP error: ${response.status}`);
     }
 
     const data = await response.json();
-    console.log("Response data received:", data);
+    console.log("Phrases received:", data);
     setPhrases(data);
   } catch (error) {
-    console.error("Error generating phrases:", error);
+    console.error("Error in generatePhrases:", error.message);
   }
 };
+
 
   // Call Flask API to generate and play speech
   let currentAudio = null; // Global variable to track current audio instance
