@@ -42,7 +42,7 @@ const generatePhrases = async () => {
     console.log("Generated URL:", `${BASE_URL}/generate-phrases`);
 
 
-    const response = await fetch('${BASE_URL}/generate-phrases', {
+    const response = await fetch(`${BASE_URL}/generate-phrases`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -78,7 +78,7 @@ const generatePhrases = async () => {
         return;
       }
   
-      const response = await fetch('${BASE_URL}/generate-speech', {
+      const response = await fetch(`${BASE_URL}/generate-speech`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
