@@ -26,14 +26,20 @@ function App() {
     setKeyword(event.target.value);
   };
 
+
+const BASE_URL = "https://phrase-mauve.vercel.app";
+
+
 // Call Flask API to generate phrases with detailed debugging
 const generatePhrases = async () => {
   try {
     console.log("Starting to generate phrases...");
     console.log("Keyword:", keyword);
     console.log("Mode:", mode);
+    console.log("Generated URL:", `${BASE_URL}/generate-phrases`);
 
-    const response = await fetch("https://phrase-mauve.vercel.app/generate-phrases", {
+
+    const response = await fetch('${BASE_URL}/generate-phrases', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -69,7 +75,7 @@ const generatePhrases = async () => {
         return;
       }
   
-      const response = await fetch("https://phrase-mauve.vercel.app/generate-speech", {
+      const response = await fetch('${BASE_URL}/generate-speech', {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
