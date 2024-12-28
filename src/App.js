@@ -33,7 +33,7 @@ const generatePhrases = async () => {
     console.log("Keyword:", keyword);
     console.log("Mode:", mode);
 
-    const response = await fetch("https://phrase-1yw5ja0gu-rayyaan-haamids-projects.vercel.app/generate-phrases", {
+    const response = await fetch("https://phrase-mauve.vercel.app/generate-phrases", {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -70,7 +70,7 @@ const generatePhrases = async () => {
         return;
       }
   
-      const response = await fetch("https://phrase-1yw5ja0gu-rayyaan-haamids-projects.vercel.app/generate-speech", {
+      const response = await fetch("https://phrase-mauve.vercel.app/generate-speech", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
