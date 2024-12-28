@@ -27,7 +27,10 @@ function App() {
   };
 
 
-const BASE_URL = "https://phrase-mauve.vercel.app";
+  const BASE_URL = "https://phrase-mauve.vercel.app";
+  const url = `${BASE_URL}/generate-phrases`;
+  console.log(url); // Check if this logs: "https://phrase-mauve.vercel.app/generate-phrases"
+  
 
 
 // Call Flask API to generate phrases with detailed debugging
